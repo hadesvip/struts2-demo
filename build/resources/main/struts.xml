@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="home-module" extends="struts-default,json-default">
+        <action name="index" method="index" class="com.action.IndexAction">
+            <result type="json"/>
+            <interceptor-ref name="json">
+                <param name="enableSMD">true</param>
+                <param name="contentType">application/json</param>
+            </interceptor-ref>
+        </action>
+    </package>
+</struts>
