@@ -9,11 +9,21 @@
     <constant name="struts.devMode" value="true"/>
 
     <package name="home-module" extends="json-default">
+
+        <interceptors>
+            <interceptor name="jsonInterceptor" class="org.apache.struts2.json.JSONInterceptor"/>
+            <interceptor-stack name="mydefault">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="jsonInterceptor"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="mydefault"/>
+        
         <action name="index" method="home" class="com.action.IndexAction">
             <result type="json" name="success">
                 <param name="excludeProperties">goodsList</param>
             </result>
-
         </action>
+
     </package>
 </struts>
