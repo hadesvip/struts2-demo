@@ -1,5 +1,7 @@
 package com.domain;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class Goods {
 
     private String goodName;
@@ -22,5 +24,13 @@ public class Goods {
     public Goods setAddress(String address) {
         this.address = address;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("goodName", goodName)
+                .append("address", address)
+                .toString();
     }
 }

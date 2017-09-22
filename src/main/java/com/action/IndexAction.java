@@ -1,14 +1,14 @@
 package com.action;
 
-import com.domain.Goods;
+import com.action.base.BaseAction;
 import com.domain.User;
-import com.opensymphony.xwork2.ActionSupport;
+import com.google.gson.Gson;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
+import java.io.IOException;
 
-public class IndexAction extends ActionSupport {
+public class IndexAction extends BaseAction {
 
     private User user;
 
@@ -16,24 +16,19 @@ public class IndexAction extends ActionSupport {
         return user;
     }
 
-    public void setUser(User user) {
+    public IndexAction setUser(User user) {
         this.user = user;
+        return this;
     }
 
-    private List<Goods> goodsList;
-
-    public List<Goods> getGoodsList() {
-        return goodsList;
-    }
-
-    public void setGoodsList(List<Goods> goodsList) {
-        this.goodsList = goodsList;
-    }
-
-    public String home() {
+    public String home() throws IOException {
         HttpServletRequest request = ServletActionContext.getRequest();
-        System.out.println(user);
-        System.out.println(goodsList);
+        String jsonStr = this.parseReqJsonData(request);
+        System.out.println(jsonStr);
+        Gson gson = new Gson();
+        user = gson.fromJson(jsonStr, User.class);
+//        System.out.println(user);
+//        System.out.println(goodsList);
         return SUCCESS;
     }
 }

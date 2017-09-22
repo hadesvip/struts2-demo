@@ -31,9 +31,9 @@
 
     $("#btn").click(function () {
         $.ajax({
-            url: "home.action",
+            url: "index.action",
             data: JSON.stringify(jsonobject),
-            // dataType: 'json',
+            dataType: 'json',
             contentType: 'application/json',
             type: 'POST',
             async: true,

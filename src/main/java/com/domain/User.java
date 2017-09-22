@@ -1,5 +1,7 @@
 package com.domain;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.List;
 
 public class User {
@@ -8,6 +10,7 @@ public class User {
 
     private String email;
 
+    private List<Goods> goodsList;
 
     public String getUserName() {
         return userName;
@@ -36,5 +39,12 @@ public class User {
         return this;
     }
 
-    private List<Goods> goodsList;
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("userName", userName)
+                .append("email", email)
+                .append("goodsList", goodsList)
+                .toString();
+    }
 }
