@@ -12,18 +12,16 @@ public class Goods {
         return goodName;
     }
 
-    public Goods setGoodName(String goodName) {
+    public void setGoodName(String goodName) {
         this.goodName = goodName;
-        return this;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public Goods setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
-        return this;
     }
 
     @Override

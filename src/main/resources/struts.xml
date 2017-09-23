@@ -18,7 +18,7 @@
             </interceptor-stack>
         </interceptors>
         <default-interceptor-ref name="mydefault"/>
-        
+
         <action name="index" method="home" class="com.action.IndexAction">
             <result type="json" name="success">
                 <param name="excludeProperties">goodsList</param>
