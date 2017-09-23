@@ -25,7 +25,8 @@ dependencies {
             'org.apache.struts:struts2-json-plugin:2.5.13',
             'org.apache.logging.log4j:log4j-api:2.8.2',
             'commons-beanutils:commons-beanutils:1.9.3',
-            'com.google.code.gson:gson:2.8.1'
+            'com.google.code.gson:gson:2.8.1',
+            'com.google.guava:guava:20.0'
 
 
     )

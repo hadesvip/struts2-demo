@@ -31,4 +31,12 @@ public class Goods {
                 .append("address", address)
                 .toString();
     }
+
+    public Goods(String goodName, String address) {
+        this.goodName = goodName;
+        this.address = address;
+    }
+
+    public Goods() {
+    }
 }
